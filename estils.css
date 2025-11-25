@@ -1,0 +1,370 @@
+:root {
+  --navH: 64px;
+  --pageMax: 1100px;
+
+  /* Paleta */
+  --bg: #0f172a;            /* fons bluish */
+  --surface: #111827aa;     /* glass base (semi-transp.) */
+  --card: #1f2937;          /* targeta */
+  --primary: #60a5fa;       /* blau primari */
+  --secondary: #34d399;     /* verd secundari */
+  --accent: #f59e0b;        /* taronja accent */
+  --text: #e5e7eb;          /* text principal */
+  --muted: #94a3b8;         /* text secundari */
+
+  /* Ombres */
+  --shadow-1: 0 10px 24px rgba(0,0,0,0.25);
+  --shadow-2: 0 6px 16px rgba(0,0,0,0.35);
+
+  /* Ritmes i ràdios */
+  --radius: 14px;
+  --space: 16px;
+}
+
+/* Tipografia base (Google Fonts: Playfair Display per títols, Inter per text) */
+html {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  background: linear-gradient(180deg, #0b1224 0%, #0f172a 50%, #0b1224 100%);
+  color: var(--text);
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+}
+
+/* Contenidor central */
+.container {
+  width: min(92%, var(--pageMax));
+  margin: 0 auto;
+}
+
+/* Títols (Google Font) */
+.h1, h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 4vw + 0.5rem, 3.2rem);
+  letter-spacing: 0.02em;
+  line-height: 1.15;
+}
+.h2, h2 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.6rem, 2.6vw + 0.4rem, 2.2rem);
+}
+.h3, h3 {
+  font-size: clamp(1.25rem, 1.8vw + 0.35rem, 1.6rem);
+  font-weight: 600;
+}
+
+/* Enllaços i botons */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: color 0.25s ease-in-out, letter-spacing 0.25s ease-in-out;
+}
+a:hover {
+  color: #93c5fd;
+  letter-spacing: 0.02em;
+}
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: var(--primary);
+  color: #0b1224;
+  font-weight: 600;
+  box-shadow: var(--shadow-1);
+  transition: background-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
+  will-change: transform;
+}
+.button:hover {
+  background: #93c5fd;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-2);
+}
+.button .material-symbols-outlined {
+  font-size: 24px; /* baseline friendly */
+}
+
+/* Navbar sticky amb efecte glass/frosted */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  height: var(--navH);
+  display: flex;
+  align-items: center;
+  backdrop-filter: blur(10px);
+  background: var(--surface);
+  border-bottom: 1px solid #ffffff18;
+}
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  color: var(--text);
+}
+.nav-brand .material-symbols-outlined {
+  font-size: 24px;
+  opacity: 0.9;
+}
+.nav-links {
+  display: flex;
+  gap: 20px;
+}
+.nav-link {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: var(--text);
+  transition: background-color 0.25s ease, color 0.25s ease, letter-spacing 0.25s ease;
+}
+.nav-link:hover {
+  background-color: #ffffff14;
+  color: #fff;
+  letter-spacing: 0.02em;
+}
+.nav-link.active {
+  background-color: #ffffff24;
+  color: #fff;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 60px 0 30px;
+  align-items: flex-start;
+}
+.hero-sub {
+  color: var(--muted);
+  max-width: 60ch;
+}
+
+/* Targetes (fila flex) */
+.cards {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap; /* responsive wrap */
+}
+.card {
+  flex: 1 1 280px;
+  background: var(--card);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow-1);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+  will-change: transform;
+}
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--shadow-2);
+  background: #243447;
+}
+.card-img {
+  width: 100%;
+  aspect-ratio: 16 / 30;
+  object-fit: cover;
+  transition: opacity 0.35s var(--card-timing, ease);
+}
+.card-body {
+  padding: 16px;
+}
+.card-title {
+  font-weight: 700;
+}
+.card-text {
+  color: var(--muted);
+}
+
+/* Menú secundari amb transicions (sense JS) */
+.submenu {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 26px;
+}
+.submenu a {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: #ffffff10;
+  color: var(--text);
+  transition:
+    color 0.25s ease,
+    letter-spacing 0.25s ease,
+    background-color 0.35s ease-in-out;
+}
+.submenu a:hover {
+  color: #fff;
+  letter-spacing: 0.02em;
+  background-color: #ffffff22;
+}
+
+/* Secció comuna */
+.section {
+  padding: 32px 0;
+}
+
+/* Footer senzill */
+.footer {
+  padding: 20px 0 50px;
+  color: var(--muted);
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------------------------
+   Estilos específicos para galeria.html
+------------------------------ */
+
+/* Contenedor de vídeos */
+.video-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Tarjeta de vídeo */
+.card {
+  flex: 1 1 300px;
+  background: #1f2937;          /* fondo oscuro */
+  border-radius: 14px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.45);
+}
+
+/* Cuerpo de la tarjeta */
+.card-body {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Título */
+.card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+  margin-bottom: 8px;
+}
+
+/* Vídeo dentro de la tarjeta */
+.card video {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  background-color: #000; /* fondo negro detrás del vídeo */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+/* Responsive: en pantallas grandes, 3 vídeos por fila */
+@media (min-width: 768px) {
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+}
+
+
+/* ------------------------------
+   Guia d’estil (tipografia + icones)
+------------------------------ */
+/* Escala tipogràfica rem-based + accessibilitat */
+.typescale {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.typescale .row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.baseline-demo {
+  display: inline-flex;
+  align-items: baseline; /* alineació per baseline */
+  gap: 8px;
+}
+/* Cards d'icones amb pesos i opsz */
+.icon-grid {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.icon-card {
+  flex: 1 1 240px;
+  background: #ffffff10;
+  border-radius: var(--radius);
+  padding: 14px;
+}
+.legend {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Colors taula */
+.colors {
+  width: 100%;
+  border-collapse: collapse;
+}
+.colors th, .colors td {
+  border-bottom: 1px solid #ffffff18;
+  text-align: left;
+  padding: 8px;
+}
+
+/* ------------------------------
+   Responsive (≥ 768px)
+------------------------------ */
+@media (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hero .hero-text {
+    flex: 1 1 480px;
+    padding-right: 20px;
+  }
+  .hero .hero-media {
+    flex: 1 1 380px;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .cards {
+    flex-wrap: nowrap; /* fila en desktop */
+  }
+  .container {
+    padding: 0 10px;
+  }
+}
+
+/* ------------------------------
+   Utilitats
+------------------------------ */
+.autocenter {
+  max-width: var(--pageMax);
+  margin: auto;
+  padding: 0 12px;
+}
+.muted { color: var(--muted); }
+.spacer { height: 20px; }

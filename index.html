@@ -1,44 +1,178 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Transiciones · Ejercicio 005</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Google Fonts + Material Icons -->
+  <meta charset="UTF-8"/>
+  <title>NBA · Transiciones</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="estils.css"/>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-  <link rel="stylesheet" href="estils.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,300..700,0..1,0..200"/>
 </head>
-<body class="page-transiciones">
-  <header class="nav">
-    <a class="nav__brand" href="index.html">Ejercicio 005</a>
-    <nav class="nav__links">
-      <a class="nav__link nav__link--active" href="index.html">Inicio</a>
-      <a class="nav__link" href="galeria.html">Galería</a>
-      <a class="nav__link" href="guia-estil.html">Guía de estilo</a>
-    </nav>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a class="nav-brand" href="index.html">
+        <span class="material-symbols-outlined">sports_basketball</span>
+        <span>NBA Flex</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link active" href="index.html">Inicio</a>
+        <a class="nav-link" href="galeria.html">Jugadas</a>
+        <a class="nav-link" href="guia-estil.html">Guía de estilo</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
+  <main class="container">
+    <!-- Hero -->
     <section class="hero">
-      <h1 class="hero__title">Transiciones CSS</h1>
-      <p class="hero__subtitle">Ejemplos de color, sombra, escala y timing.</p>
-      <a class="btn btn--primary" href="#objetivos">
-        <span class="material-symbols-outlined">play_arrow</span> Ver objetivos
-      </a>
-    </section>
-
-    <section id="objetivos" class="objetivos">
-      <h2>Objetivos interactivos</h2>
-      <div class="objetivos__grid">
-        <div class="card card--linear"><h3>Lineal</h3></div>
-        <div class="card card--ease"><h3>Ease</h3></div>
-        <div class="card card--ease-in"><h3>Ease-in</h3></div>
-        <div class="card card--ease-out"><h3>Ease-out</h3></div>
-        <div class="card card--ease-in-out"><h3>Ease-in-out</h3></div>
+      <div class="hero-text">
+        <h1>La NBA: Transiciones y evolución</h1>
+        <p class="hero-sub">La liga de baloncesto más importante del mundo, llena de momentos históricos y jugadores legendarios.</p>
+        <a class="button" href="galeria.html">
+          <span class="material-symbols-outlined">play_arrow</span>
+          <span>Ver jugadas historicas</span>
+        </a>
       </div>
     </section>
+
+    <!-- Campeones recientes -->
+    <section class="section">
+      <h2>Campeones recientes</h2>
+      <ul>
+        <li>2025: Oklahoma City Thunder</li>
+        <li>2024: Boston Celtics</li>
+        <li>2023: Denver Nuggets</li>
+        <li>2022: Golden State Warriors</li>
+        <li>2021: Milwaukee Bucks</li>
+        <li>2020: Los Angeles Lakers</li>
+        <li>2019: Toronto Raptors</li>
+      </ul>
+      <p class="muted">Cada campeonato refleja la transición de estilos de juego: del dominio interior al reinado del triple.</p>
+    </section>
+
+    <!-- Jugadores legendarios -->
+    <section class="section">
+      <h2>Jugadores legendarios</h2>
+      <div class="cards">
+        <article class="card">
+          <img class="card-img" src="assets/img/Michael Jordan.jpg" alt="Michael Jordan"/>
+          <div class="card-body">
+            <h3 class="card-title">Michael Jordan</h3>
+            <p class="card-text">El mejor de todos los tiempos, seis anillos con Chicago Bulls.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="assets/img/Lebron James.jpg" alt="LeBron James"/>
+          <div class="card-body">
+            <h3 class="card-title">LeBron James</h3>
+            <p class="card-text">Máximo anotador histórico de la NBA, aún activo.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="assets/img/Kobe Bryant.jpg" alt="Kobe Bryant"/>
+          <div class="card-body">
+            <h3 class="card-title">Kobe Bryant</h3>
+            <p class="card-text">Leyenda de los Lakers, símbolo de esfuerzo y pasión.</p>
+          </div>
+        </article>
+        <article class="card">
+          <img class="card-img" src="assets/img/Stephen Curry.jpg" alt="Stephen Curry"/>
+          <div class="card-body">
+            <h3 class="card-title">Stephen Curry</h3>
+            <p class="card-text">Revolucionó el baloncesto con el tiro de tres puntos, cuatro veces campeón con los Warriors.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Jugadas históricas -->
+    <section class="section">
+      <h2>Jugadas históricas</h2>
+      <ul>
+        <li>Ray Allen (2013): Triple decisivo en las Finales contra San Antonio Spurs.</li>
+        <li>LeBron James (2016): Tapón histórico a Iguodala en el Juego 7.</li>
+        <li>Kawhi Leonard (2019): Canasta sobre la bocina contra Philadelphia 76ers.</li>
+      </ul>
+      <p class="muted">Estas jugadas marcaron transiciones en la historia de la NBA y cambiaron el rumbo de campeonatos.</p>
+    </section>
+
+ <!-- Finales icónicas -->
+<section class="section">
+  <h2>Finales icónicas</h2>
+  <p>Algunas finales han quedado grabadas en la memoria de los aficionados:</p>
+  <ol>
+    <li>1998: Chicago Bulls vs Utah Jazz — El último tiro de Jordan.</li>
+    <li>2016: Cavaliers vs Warriors — Remontada histórica de 3–1.</li>
+    <li>2020: Lakers vs Heat — Campeonato en la burbuja de Orlando.</li>
+    <li>2022: Warriors vs Celtics — Golden State conquistó su cuarto título en ocho años, con Curry como MVP de las Finales.</li>
+  </ol>
+</section>
+
+    <!-- Récords y estadísticas -->
+<section class="section">
+  <h2>Récords históricos</h2>
+  <table class="colors">
+    <thead>
+      <tr>
+        <th>Jugador</th>
+        <th>Récord</th>
+        <th>Equipo principal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>LeBron James</td>
+        <td>42,000+ puntos (máximo anotador histórico)</td>
+        <td>Lakers / Cavaliers / Heat</td>
+      </tr>
+      <tr>
+        <td>Kareem Abdul-Jabbar</td>
+        <td>38,387 puntos</td>
+        <td>Lakers / Bucks</td>
+      </tr>
+      <tr>
+        <td>Karl Malone</td>
+        <td>36,928 puntos</td>
+        <td>Utah Jazz</td>
+      </tr>
+      <tr>
+        <td>Kobe Bryant</td>
+        <td>33,643 puntos</td>
+        <td>Lakers</td>
+      </tr>
+      <tr>
+        <td>Stephen Curry</td>
+        <td>Más de 3,500 triples convertidos (récord absoluto en la NBA)</td>
+        <td>Golden State Warriors</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+    <!-- Curiosidades -->
+    <section class="section">
+      <h2>Curiosidades de la NBA</h2>
+      <ul>
+        <li>La NBA se fundó en 1946 como la Basketball Association of America.</li>
+        <li>El All-Star Game reúne a las estrellas cada febrero desde 1951.</li>
+        <li>Los Golden State Warriors son el equipo más dominante de la última década.</li>
+        <li>La NBA tiene más de 30 equipos y millones de seguidores en todo el mundo.</li>
+      </ul>
+    </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 · NBA Flex</div>
+  </footer>
 </body>
 </html>

@@ -1,47 +1,119 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Guía de estilo · Ejercicio 005</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-  <link rel="stylesheet" href="estils.css">
+  <meta charset="UTF-8"/>
+  <title>NBA · Guía de estilo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="estils.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,300..700,0..1,0..200"/>
 </head>
-<body class="page-guia">
-  <header class="nav">
-    <a class="nav__brand" href="index.html">Ejercicio 005</a>
-    <nav class="nav__links">
-      <a class="nav__link" href="index.html">Inicio</a>
-      <a class="nav__link" href="galeria.html">Galería</a>
-      <a class="nav__link nav__link--active" href="guia-estil.html">Guía de estilo</a>
-    </nav>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a class="nav-brand" href="index.html">
+        <span class="material-symbols-outlined">sports_basketball</span>
+        <span>NBA Flex</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link" href="galeria.html">Jugadas</a>
+        <a class="nav-link active" href="guia-estil.html">Guía de estilo</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="tipografia">
-      <h1>Playfair Display 700</h1>
-      <h2>Inter 600</h2>
-      <p class="body body--300">Texto ligero</p>
-      <p class="body body--400">Texto normal</p>
-      <p class="body body--800">Texto fuerte</p>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Guía tipográfica y visual NBA</h1>
+        <p class="hero-sub">Fuentes, iconos y colores que definen el estilo de nuestro mini-sitio sobre la NBA.</p>
+      </div>
     </section>
 
-    <section class="icons">
-      <span class="material-symbols-outlined">home</span>
-      <span class="material-symbols-outlined">favorite</span>
-      <button class="btn btn--outline">
-        <span class="material-symbols-outlined">download</span> Descargar
-      </button>
+    <!-- Tipografía -->
+    <section class="section">
+      <h2>Tipografía</h2>
+      <h1>NBA Finals</h1>
+      <h2>Golden State Warriors</h2>
+      <h3>Chicago Bulls</h3>
+      <p style="font-weight:300;">Texto ligero estilo crónica.</p>
+      <p style="font-weight:600;">Texto seminegrita para titulares.</p>
+      <p style="font-weight:800;">Texto muy marcado para énfasis.</p>
     </section>
 
-    <section class="colores">
-      <table>
-        <tr><th>HEX</th><th>RGB</th><th>HSL</th></tr>
-        <tr><td>#1F6FEB</td><td>31,111,235</td><td>217,83%,52%</td></tr>
+    <!-- Iconos -->
+    <section class="section">
+      <h2>Iconos NBA</h2>
+      <div class="icon-grid">
+        <div class="icon-card">
+          <span class="material-symbols-outlined" style="font-size:24px;">sports_basketball</span>
+          <div class="legend">Balón de baloncesto</div>
+        </div>
+        <div class="icon-card">
+          <span class="material-symbols-outlined" style="font-size:40px;">star</span>
+          <div class="legend">Estrella (All-Star)</div>
+        </div>
+        <div class="icon-card">
+          <span class="material-symbols-outlined" style="font-variation-settings:'OPSZ' 48, 'wght' 700;">stadium</span>
+          <div class="legend">Estadio NBA</div>
+        </div>
+        <div class="icon-card">
+          <span class="material-symbols-outlined">group</span>
+          <div class="legend">Trabajo en equipo</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Escala tipográfica -->
+    <section class="section">
+      <h2>Escala tipográfica</h2>
+      <p style="font-size:0.875rem;">Texto mínimo (0.875rem)</p>
+      <p style="font-size:1rem;">Texto base (1rem)</p>
+      <p style="font-size:1.5rem;">Subtítulo (1.5rem)</p>
+      <p style="font-size:2rem;">Título grande (2rem)</p>
+    </section>
+
+    <!-- Paleta de colores -->
+    <section class="section">
+      <h2>Paleta de colores</h2>
+    <div class="colors-wrap">
+      <table class="colors">
+        <tr><th>Nombre</th><th>HEX</th><th>RGB</th><th>HSL</th></tr>
+        <tr><td>Naranja balón</td><td>#F59E0B</td><td>rgb(245,158,11)</td><td>hsl(38,92%,50%)</td></tr>
+        <tr><td>Negro cancha</td><td>#0f172a</td><td>rgb(15,23,42)</td><td>hsl(220,36%,11%)</td></tr>
+        <tr><td>Blanco líneas</td><td>#FFFFFF</td><td>rgb(255,255,255)</td><td>hsl(0,0%,100%)</td></tr>
+        <tr><td>Azul contraste</td><td>#60A5FA</td><td>rgb(96,165,250)</td><td>hsl(213,94%,68%)</td></tr>
       </table>
+    </div>
+    </section>
+
+    <!-- Ejemplos prácticos -->
+    <section class="section">
+      <h2>Ejemplos prácticos</h2>
+      <a class="button" href="#">
+        <span class="material-symbols-outlined">bar_chart</span>
+        <span>Ver estadísticas</span>
+      </a>
+      <a class="button" href="#">
+        <span class="material-symbols-outlined">share</span>
+        <span>Compartir jugada</span>
+      </a>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 · NBA Flex</div>
+  </footer>
 </body>
 </html>
-

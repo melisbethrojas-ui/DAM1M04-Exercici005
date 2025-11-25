@@ -1,36 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <title>Animaciones · Ejercicio 005</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
-  <link rel="stylesheet" href="estils.css">
+  <meta charset="UTF-8"/>
+  <title>NBA · Jugadas históricas</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <link rel="stylesheet" href="estils.css"/>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24..48,300..700,0..1,0..200"/>
 </head>
-<body class="page-animaciones">
-  <header class="nav">
-    <a class="nav__brand" href="index.html">Ejercicio 005</a>
-    <nav class="nav__links">
-      <a class="nav__link" href="index.html">Inicio</a>
-      <a class="nav__link nav__link--active" href="galeria.html">Galería</a>
-      <a class="nav__link" href="guia-estil.html">Guía de estilo</a>
-    </nav>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container">
+      <a class="nav-brand" href="index.html">
+        <span class="material-symbols-outlined">sports_basketball</span>
+        <span>NBA Flex</span>
+      </a>
+      <nav class="nav-links">
+        <a class="nav-link" href="index.html">Inicio</a>
+        <a class="nav-link active" href="galeria.html">Jugadas</a>
+        <a class="nav-link" href="guia-estil.html">Guía de estilo</a>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="loader">
-      <div class="dot"></div>
-      <p>Loader con rotación y pulso</p>
+  <main class="container">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Jugadas históricas de la NBA</h1>
+        <p class="hero-sub">Seis momentos inolvidables que marcaron la historia del baloncesto.</p>
+      </div>
     </section>
 
-    <section class="animaciones">
-      <div class="block block--alt">Animación alternada</div>
-      <div class="block block--infinita">Animación infinita</div>
-      <div class="reveal">Bloque A</div>
-      <div class="reveal">Bloque B</div>
-      <div class="reveal">Bloque C</div>
+    <!-- Sección de vídeos -->
+    <section class="section">
+      <h2>Vídeos de jugadas históricas</h2>
+      <div class="video-grid">
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">El último tiro de Jordan (1998)</h3>
+            <video controls>
+              <source src="assets/media/jordan-lastshot.mov" type="video/quicktime">
+            </video>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Triple de Ray Allen (2013)</h3>
+            <video controls>
+              <source src="assets/media/rayallen-2013.mov" type="video/quicktime">
+            </video>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Tapón de LeBron James (2016)</h3>
+            <video controls>
+              <source src="assets/media/lebron-block-2016.mov" type="video/quicktime">
+            </video>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Canasta de Kawhi Leonard (2019)</h3>
+            <video controls>
+              <source src="assets/media/kawhi-2019.mov" type="video/quicktime">
+            </video>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Final Lakers vs Heat (2020)</h3>
+            <video controls>
+              <source src="assets/media/lakers-heat-2020.mov" type="video/quicktime">
+            </video>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-body">
+            <h3 class="card-title">Final Warriors vs Celtics (2022)</h3>
+            <video controls>
+              <source src="assets/media/warriors-2022.mov" type="video/quicktime">
+            </video>
+          </div>
+        </article>
+      </div>
     </section>
   </main>
+
+  <footer class="footer">
+    <div class="container">© 2025 · NBA Flex</div>
+  </footer>
 </body>
 </html>
