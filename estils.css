@@ -3,16 +3,16 @@
   --pageMax: 1100px;
 
   /* Paleta */
-  --bg: #0f172a;            /* fons bluish */
-  --surface: #111827aa;     /* glass base (semi-transp.) */
-  --card: #1f2937;          /* targeta */
-  --primary: #60a5fa;       /* blau primari */
-  --secondary: #34d399;     /* verd secundari */
-  --accent: #f59e0b;        /* taronja accent */
-  --text: #e5e7eb;          /* text principal */
-  --muted: #94a3b8;         /* text secundari */
+  --bg: #0f172a;          
+  --surface: #111827aa;    
+  --card: #1f2937;        
+  --primary: #60a5fa;      
+  --secondary: #34d399;    
+  --accent: #f59e0b;        
+  --text: #e5e7eb;          
+  --muted: #94a3b8;      
 
-  /* Ombres */
+  /* Sombras */
   --shadow-1: 0 10px 24px rgba(0,0,0,0.25);
   --shadow-2: 0 6px 16px rgba(0,0,0,0.35);
 
@@ -21,7 +21,7 @@
   --space: 16px;
 }
 
-/* Tipografia base (Google Fonts: Playfair Display per títols, Inter per text) */
+/* Tipografia base*/
 html {
   font-size: 16px;
 }
@@ -39,7 +39,7 @@ body {
   margin: 0 auto;
 }
 
-/* Títols (Google Font) */
+/* Titulos  */
 .h1, h1 {
   font-family: "Playfair Display", serif;
   font-size: clamp(2rem, 4vw + 0.5rem, 3.2rem);
@@ -55,7 +55,7 @@ body {
   font-weight: 600;
 }
 
-/* Enllaços i botons */
+/* Enlaces y botones */
 a {
   color: var(--primary);
   text-decoration: none;
@@ -84,56 +84,61 @@ a:hover {
   box-shadow: var(--shadow-2);
 }
 .button .material-symbols-outlined {
-  font-size: 24px; /* baseline friendly */
+  font-size: 24px;
 }
 
-/* Navbar sticky amb efecte glass/frosted */
+/* Navbar sticky*/
 .navbar {
   position: sticky;
   top: 0;
   z-index: 1000;
-  height: var(--navH);
+  height: 48px;               
   display: flex;
   align-items: center;
   backdrop-filter: blur(10px);
   background: var(--surface);
   border-bottom: 1px solid #ffffff18;
+  padding: 0 8px;    
 }
+
 .navbar .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 8px;                  
 }
+
 .nav-brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 6px;                 
   font-weight: 700;
   color: var(--text);
 }
 .nav-brand .material-symbols-outlined {
-  font-size: 24px;
+  font-size: 20px;
   opacity: 0.9;
 }
+
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 10px;                 
 }
+
 .nav-link {
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 6px 8px;       
+  border-radius: 12px;
   color: var(--text);
   transition: background-color 0.25s ease, color 0.25s ease, letter-spacing 0.25s ease;
   display: inline-flex;
   align-items: center;
-  gap: 6px; /* espacio entre icono y texto */
+  gap: 4px;
+  font-size: 0.9rem;          
 }
-
 .nav-link .material-symbols-outlined {
-  font-size: 22px;
+  font-size: 18px;           
   vertical-align: middle;
 }
-
 .nav-link:hover {
   background-color: #ffffff14;
   color: #fff;
@@ -144,6 +149,80 @@ a:hover {
   color: #fff;
 }
 
+/* Responsive*/
+@media (min-width: 768px) {
+  .navbar {
+    height: var(--navH);
+    padding: 0 16px;
+  }
+  .nav-brand .material-symbols-outlined {
+    font-size: 24px;
+  }
+  .nav-links {
+    gap: 20px;
+  }
+  .nav-link {
+    padding: 8px 12px;
+    font-size: 1rem;
+    gap: 6px;
+  }
+  .nav-link .material-symbols-outlined {
+    font-size: 22px;
+  }
+}
+
+/* Submenu*/
+.submenu {
+  display: flex;
+  flex-wrap: wrap;          
+  justify-content: center;   
+  gap: 12px;   
+  padding: 8px 12px;        
+  margin: 0;                 
+}
+
+.submenu a {
+  position: relative;
+  text-decoration: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  color: #fff;
+  padding: 6px 8px;  
+  transition: color 0.3s ease, letter-spacing 0.3s ease;
+}
+
+.submenu a:hover {
+  color: #d32f2f;
+  letter-spacing: 0.02em;  
+}
+
+.submenu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: #d32f2f;
+  transition: width 0.3s ease;
+}
+.submenu a:hover::after { width: 100%; }
+
+/* Responsive*/
+@media (min-width: 768px) {
+  .submenu {
+    justify-content: flex-end;
+    gap: 24px;
+    padding: 10px 0;
+    margin: 0; 
+  }
+  .submenu a {
+    padding: 8px 10px;
+  }
+  .submenu a:hover {
+    letter-spacing: 0.04em;
+  }
+}
 
 /* Hero */
 .hero {
@@ -158,7 +237,7 @@ a:hover {
   max-width: 60ch;
 }
 
-/* Targetes (fila flex) */
+/* Tarjetas*/
 .cards {
   display: flex;
   gap: 18px;
@@ -178,8 +257,30 @@ a:hover {
 .card:hover {
   transform: translateY(-6px) scale(1.02);
   box-shadow: var(--shadow-2);
-  background: #243447;
+  background: hsl(0, 0%, 0%);
 }
+
+.card {
+  position: relative;
+  overflow: hidden;
+}
+.card-img.default {
+  transition: opacity 0.35s ease;
+}
+.card-img.hover {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+.card:hover .card-img.default {
+  opacity: 0;
+}
+.card:hover .card-img.hover {
+  opacity: 1;
+}
+
 .card-img {
   width: 100%;
   aspect-ratio: 16 / 30;
@@ -220,7 +321,7 @@ a:hover {
   margin: 4px 0;
 }
 
-/* Secció comuna */
+/* Secció comun */
 .section {
   padding: 32px 0;
 }
@@ -233,75 +334,122 @@ a:hover {
   justify-content: center;
 }
 
-/* ------------------------------
-   Estilos específicos para galeria.html
------------------------------- */
-/* Animaciones NBA */
-.animaciones h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
-  color: #fbbf24;
-  text-align: center;
-}
+/*Estilos específicos para galeria*/
 .anim-row {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
   gap: 20px;
+  align-items: flex-start;
 }
-
 .anim-card {
-  background: #1f2937;
-  border-radius: 14px;
-  padding: 20px;
+  flex: 1 1 200px;
   text-align: center;
-  color: #e5e7eb;
-  box-shadow: 0 6px 16px rgba(0,0,0,0.35);
-  font-size: 1rem;
-  width: 220px;
-  flex: 0 0 auto;
+  padding: 20px;
+}
+.anim-card p {
+  font-size: 20px;
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  animation: revealAnim 1s ease forwards;
+  animation-timeline: view();
+  animation-range: entry 0% cover 40%;
 }
 
-/* 1. Balón girando */
-.spin .material-symbols-outlined {
-  font-size: 48px;
-  animation: spin 3s linear infinite;
-}
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+@keyframes revealAnim {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* 2. Texto que se expande */
-.expand h3 {
-  font-size: 1.2rem;
-  color: #fbbf24;
-  animation: expandText 2s ease-in-out infinite;
-}
-@keyframes expandText {
-  0%, 100% { letter-spacing: 0px; transform: scale(1); }
-  50% { letter-spacing: 4px; transform: scale(1.2); }
+/* Fallback si el navegador no soporta animation-timeline */
+@supports not (animation-timeline: view()) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
 }
 
-/* 3. Icono que rota en 3D */
-.rotate3d .material-symbols-outlined {
-  font-size: 48px;
-  display: inline-block;
-  animation: rotate3dAnim 4s linear infinite;
-}
-@keyframes rotate3dAnim {
-  0% { transform: rotateY(0deg); }
-  50% { transform: rotateY(180deg); }
-  100% { transform: rotateY(360deg); }
+/* Cuadrado */
+.box {
+  width: 50px;
+  height: 50px;
+  background: crimson;
+  animation: bounceAndFade 3s linear infinite;
 }
 
-/* 4. Jugador que parpadea */
-.blink .material-symbols-outlined {
-  font-size: 48px;
-  animation: blinkAnim 1s step-start infinite;
+@keyframes bounceAndFade {
+  0%   { transform: translateY(0) scale(1); opacity: 1; background: crimson; }
+  25%  { transform: translateY(-20px) scale(1.1); opacity: 0.8; background: orange; }
+  50%  { transform: translateY(-40px) scale(1.2); opacity: 0.6; background: teal; }
+  75%  { transform: translateY(-20px) scale(1.1); opacity: 0.8; background: purple; }
+  100% { transform: translateY(0) scale(1); opacity: 1; background: limegreen; }
 }
-@keyframes blinkAnim {
-  50% { opacity: 0; }
+
+
+/* 2. Cambio de color */
+.circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: teal;
+  animation: growColor 2s ease-in-out infinite;
+}
+
+@keyframes growColor {
+  0% {
+    transform: scale(1);
+    background: teal;
+  }
+  25% {
+    transform: scale(1.2);
+    background: orange;
+  }
+  50% {
+    transform: scale(1.4);
+    background: purple;
+  }
+  75% {
+    transform: scale(1.2);
+    background: crimson;
+  }
+  100% {
+    transform: scale(1);
+    background: limegreen;
+  }
+}
+
+/* 3. Texto escribiéndose */
+.typing-text {
+  width: 20ch; 
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 2px solid;
+  animation: typing 4s steps(20) infinite alternate,
+             blinkCursor 0.7s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0; }
+  to { width: 20ch; }
+}
+@keyframes blinkCursor {
+  50% { border-color: transparent; }
+}
+
+/* 4. Loader infinito */
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid #ccc;
+  border-top-color: #333;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: spinLoader 1s linear infinite;
+}
+@keyframes spinLoader {
+  to { transform: rotate(360deg); }
 }
 
 /* Contenedor de vídeos */
@@ -316,7 +464,7 @@ a:hover {
 /* Tarjeta de vídeo */
 .card {
   flex: 1 1 300px;
-  background: #1f2937;          /* fondo oscuro */
+  background: #1f2937;
   border-radius: 14px;
   box-shadow: 0 6px 16px rgba(0,0,0,0.35);
   overflow: hidden;
@@ -349,7 +497,7 @@ a:hover {
   width: 100%;
   height: auto;
   border-radius: 10px;
-  background-color: #000; /* fondo negro detrás del vídeo */
+  background-color: #000;
   box-shadow: 0 4px 12px rgba(0,0,0,0.3);
 }
 
@@ -379,7 +527,7 @@ a:hover {
 }
 .baseline-demo {
   display: inline-flex;
-  align-items: baseline; /* alineació per baseline */
+  align-items: baseline;
   gap: 8px;
 }
 /* Cards d'icones amb pesos i opsz */
@@ -399,20 +547,37 @@ a:hover {
   font-size: 0.9rem;
 }
 
-/* Colors taula */
+/* Tabla de Colores*/
+.colors-wrap {
+  width: 100%;
+  overflow-x: auto;   /* permite scroll horizontal solo dentro del contenedor */
+}
+
 .colors {
   width: 100%;
   border-collapse: collapse;
-}
-.colors th, .colors td {
-  border-bottom: 1px solid #ffffff18;
-  text-align: left;
-  padding: 8px;
+  margin-top: 16px;
+  font-family: 'Inter', sans-serif;
 }
 
-/* ------------------------------
-   Responsive (≥ 768px)
------------------------------- */
+.colors th, .colors td {
+  border: 1px solid #444;
+  padding: 8px 12px;
+  text-align: center;
+}
+
+.colors th {
+  background: #111827;
+  color: #fbbf24; /* dorado NBA */
+}
+
+.colors td {
+  background: #1f2937;
+  color: #e5e7eb;
+}
+
+
+/*Responsive */
 @media (min-width: 768px) {
   .hero {
     flex-direction: row;
