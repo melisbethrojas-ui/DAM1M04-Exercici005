@@ -16,7 +16,6 @@
   --shadow-1: 0 10px 24px rgba(0,0,0,0.25);
   --shadow-2: 0 6px 16px rgba(0,0,0,0.35);
 
-  /* Ritmes i ràdios */
   --radius: 14px;
   --space: 16px;
 }
@@ -265,14 +264,14 @@ a:hover {
   overflow: hidden;
 }
 .card-img.default {
-  transition: opacity 0.35s ease;
+  transition: opacity 0.40s ease;
 }
 .card-img.hover {
   position: absolute;
   top: 0; left: 0;
   width: 100%;
   opacity: 0;
-  transition: opacity 0.35s ease;
+  transition: opacity 0.40s ease;
 }
 .card:hover .card-img.default {
   opacity: 0;
@@ -321,12 +320,12 @@ a:hover {
   margin: 4px 0;
 }
 
-/* Secció comun */
+/* Seccion comun */
 .section {
   padding: 32px 0;
 }
 
-/* Footer senzill */
+/* Footer */
 .footer {
   padding: 20px 0 50px;
   color: var(--muted);
